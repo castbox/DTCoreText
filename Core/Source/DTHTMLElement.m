@@ -458,7 +458,7 @@ NSDictionary *_classesForNames = nil;
 			
 			for (DTHTMLElement *oneChild in self.childNodes)
 			{
-				if (oneChild.displayStyle == DTHTMLElementDisplayStyleNone)
+				if (![oneChild isKindOfClass: DTHTMLElement.class] || oneChild.displayStyle == DTHTMLElementDisplayStyleNone)
 				{
 					continue;
 				}
